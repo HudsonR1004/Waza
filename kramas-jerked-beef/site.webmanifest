@@ -1,0 +1,13 @@
+{
+  "name": "Krama's Jerked Beef",
+  "short_name": "Krama's",
+  "description": "Hand-cut Barossa Valley beef jerky, delivered.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#bda184",
+  "theme_color": "#2b2620",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "images/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

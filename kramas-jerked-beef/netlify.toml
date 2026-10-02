@@ -1,0 +1,61 @@
+# Krama's Jerked Beef — Netlify config
+# Site ID: f6d85eb0-1058-4757-a9a1-6ad02984cefe
+[build]
+  publish = "."
+
+# Force HTTPS + the apex domain. Netlify already redirects http->https when a
+# certificate is live; these make the canonical host explicit too.
+[[redirects]]
+  from = "http://kramasjerkedbeef.com.au/*"
+  to = "https://kramasjerkedbeef.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.kramasjerkedbeef.com.au/*"
+  to = "https://kramasjerkedbeef.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://kramasjerkedbeef.netlify.app/*"
+  to = "https://kramasjerkedbeef.com.au/:splat"
+  status = 301
+  force = true
+
+# Old anchors from v1/v2 of the site
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+# Custom 404 (Netlify also picks up 404.html automatically)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://assets.mailerlite.com https://plausible.io; form-action 'self' https://assets.mailerlite.com; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "/js/site.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
