@@ -21,19 +21,24 @@ kramas-jerked-beef/
 
 ## Before you deploy (do these in order)
 
-1. **Stripe links** — open `js/config.js`, paste the 5 live Payment Links into `STRIPE_LINKS`.
-   Until each one is filled, its button reads "Coming soon" rather than going nowhere.
-2. **Magic Chilli label** — in `FLAVOURS.magicChilli`, paste the ingredients line, allergen statement
-   and the per-100g numbers off the back sticker. The panel on the site builds the FSANZ-style
-   nutrition table from those numbers (per-serve is calculated for a 25g serve). Until then the
-   panel says the label is being finalised and offers an email link.
-3. **Photos** — drop them into `images/` using the names in `images/README.md`, then run
-   `./scripts/optimise-images.sh`. Every slot shows a kraft placeholder card until its file exists.
-   `images/og.jpg` (1200×630) is what Facebook / iMessage / WhatsApp show when someone shares the link.
-4. **MailerLite** — paste the account ID and form ID into `MAILERLITE`. Sign-ups also land in
+1. ✅ **Stripe links** — the 5 live Payment Links are in `STRIPE_LINKS` in `js/config.js`.
+   If a link is ever blanked out, its button reads "Coming soon" rather than going nowhere.
+2. ✅ **Flavour labels** — both flavours' ingredients, allergens and per-100g figures are in `FLAVOURS`.
+   The site builds each FSANZ-style nutrition table from those numbers. Honey Sriracha is 2 × 25g
+   serves per bag (from the company README); Magic Chilli is 1 × 50g serve (as printed on its sticker).
+   If a sticker changes, change the numbers here so the site and the bag always agree.
+3. ✅ **Photos** — hero, both flavours, the three bundles and the social preview are in. Still to come:
+   `images/logo.png` (copy it from the live site) and three "how it's made" shots. See `images/README.md`.
+4. ⬜ **MailerLite** — paste the account ID and form ID into `MAILERLITE`. Sign-ups also land in
    Netlify Forms regardless, so nothing is lost while this is empty.
-5. **Analytics (optional)** — set `ANALYTICS.domain` to turn on Plausible (cookie-free, so no banner
+5. ⬜ **Analytics (optional)** — set `ANALYTICS.domain` to turn on Plausible (cookie-free, so no banner
    needed). Or switch on Netlify Analytics in the dashboard and leave this blank.
+
+Two things to check on the packaging side, spotted while building this:
+- The Honey Sriracha pouch in the product photos reads **"HONEY SIRACHA"** (one R). The site spells it
+  Sriracha. If the printed sticker also has one R, decide which one is the brand spelling.
+- The Honey Sriracha sticker says "Contains gluten"; the Magic Chilli sticker says "May contain gluten".
+  The site repeats each label as printed. Worth confirming with the seasoning supplier which is right.
 
 ## Deploy
 

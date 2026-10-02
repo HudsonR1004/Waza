@@ -38,7 +38,7 @@
   }
 
   /* ---- photo slots: show the kraft card until the file exists ------------ */
-  $$('.photo img').forEach(img => {
+  $$('.photo > img, .photo > picture > img').forEach(img => {
     const mark = () => img.closest('.photo')?.classList.add('is-missing');
     img.addEventListener('error', mark);
     if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) mark();
@@ -145,6 +145,7 @@
         parts.push(`<h4>Ingredients</h4><p>${f.ingredients}</p>`);
       }
       if (f.allergens) parts.push(`<p><span class="allergen">${f.allergens}</span></p>`);
+      if (f.storage) parts.push(`<p class="panel__storage">${f.storage}</p>`);
       if (f.nip) {
         parts.push(`<h4>Nutrition</h4>${nipTable(f)}`);
       }

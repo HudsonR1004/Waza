@@ -9,11 +9,11 @@
    (Payment Links are public URLs, so they're safe to keep in the frontend. Never
    put a Stripe secret key, API key or webhook secret anywhere on the site.)     */
 const STRIPE_LINKS = {
-  basic:    "",   // Basic Bundle    — 4 bags,  $49 one-off
-  smoko:    "",   // Smoko Run       — 10 bags, $99 one-off
-  junkie:   "",   // Jerky Junkie    — 20 bags, $179 one-off
-  subBasic: "",   // Basic monthly   — 4 bags every month, $49/mo
-  subSmoko: ""    // Smoko monthly   — 10 bags every month, $99/mo
+  basic:    "https://buy.stripe.com/bJeeV5cxQ5UX3KL9AC8IU01",   // Basic Bundle    — 4 bags,  $49 one-off
+  smoko:    "https://buy.stripe.com/cNibIT41k2ILeppcMO8IU00",   // Smoko Run       — 10 bags, $99 one-off
+  junkie:   "https://buy.stripe.com/3cI28jcxQfvx4OP1468IU03",   // Jerky Junkie    — 20 bags, $179 one-off
+  subBasic: "https://buy.stripe.com/4gM5kv7dw4QT5ST6oq8IU02",   // Basic monthly   — 4 bags every month, $49/mo
+  subSmoko: "https://buy.stripe.com/9B6bIT2Xg1EH0yz3ce8IU04"    // Smoko monthly   — 10 bags every month, $99/mo
 };
 
 /* ---- MailerLite (newsletter) --------------------------------------------
@@ -46,14 +46,15 @@ const CONTACT = {
 /* ---- Flavours -------------------------------------------------------------
    Everything in the "Ingredients & nutrition" panel comes from here, so it
    matches the back-of-pack sticker. Values per 100g come straight off the
-   Nutrition Information Panel; per-serve is a 25g serve (2 serves per 50g bag).
+   Nutrition Information Panel; per-serve is calculated from servingSize.
    Leave `nip: null` for a flavour whose panel isn't ready yet — the page then
    says so instead of showing an empty table.                                   */
 const FLAVOURS = {
   honeySriracha: {
     name: "Honey Sriracha",
-    ingredients: "Beef topside (61%), granulated honey, sugar, salt, garlic, pepper, paprika, sriracha powder.",
+    ingredients: "Beef (topside) (≥61%), seasoning [honey sriracha rub: granulated honey, sugar, salt, garlic, pepper, paprika, sriracha powder (vinegar powder, maltodextrin, sugar, salt, paprika, spirulina, citric acid, natural flavour)].",
     allergens: "Contains gluten. May contain traces of soy.",
+    storage: "Net weight 50g. Store in a cool, dry place. Refrigerate after opening.",
     servingSize: 25,          // grams
     servesPerPack: 2,         // 50g bag
     nip: {                    // per 100g
@@ -66,12 +67,21 @@ const FLAVOURS = {
       sodium: 1480
     }
   },
-  magicChilli: {
+  magicChilli: {                // transcribed from the Magic Chilli back sticker
     name: "Magic Chilli",
-    ingredients: "",          // paste from the Magic Chilli back sticker
-    allergens: "",            // e.g. "Contains gluten. May contain traces of soy."
-    servingSize: 25,
-    servesPerPack: 2,
-    nip: null                 // fill in like Honey Sriracha once the label is final
+    ingredients: "Beef (87%), seasoning (sugar, brown sugar, salt, black pepper, garlic, chilli powder, paprika, smoked paprika, oregano, mustard, cayenne pepper, habanero), chilli flakes.",
+    allergens: "May contain gluten. May contain traces of soy.",
+    storage: "Net weight 50g. Store in a cool, dry place. Refrigerate after opening.",
+    servingSize: 50,          // the Magic Chilli label counts the whole bag as one serve
+    servesPerPack: 1,
+    nip: {                    // per 100g
+      energyKj: 1850,
+      protein: 58,
+      fat: 12.4,
+      satFat: 4.9,
+      carbs: 23.2,
+      sugars: 19.8,
+      sodium: 2290
+    }
   }
 };
