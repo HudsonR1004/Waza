@@ -6,14 +6,13 @@ site looks broken while a photo is missing.
 | File | Where it shows | Status |
 |---|---|---|
 | `og.jpg` (1200×630) | Link previews on Facebook, Instagram, iMessage, WhatsApp | ✅ cropped from the doorstep box shot |
-| `products/hero.jpg` | Hero, top of the home page | ✅ Honey Sriracha pouch with honey dipper |
 | `products/honey-sriracha.jpg` | Honey Sriracha flavour card | ✅ |
 | `products/magic-chilli.jpg` | Magic Chilli flavour card | ✅ red-background pouch shot |
-| `products/bundle-basic.jpg` | Basic Bundle card | ✅ Honey Sriracha pouch (same as hero) |
+| `products/bundle-basic.jpg` | Basic Bundle card | ✅ Honey Sriracha pouch with honey dipper |
 | `products/bundle-smoko.jpg` | Smoko Run card | ✅ doorstep box of pouches |
 | `products/bundle-junkie.jpg` | Jerky Junkie card | ✅ Magic Chilli at sunset over the vines |
 | `products/label-magic-chilli.jpg` | Not shown on the site; kept as the source for the Magic Chilli NIP in `js/config.js` | ✅ |
-| `logo.png` (512×512, transparent) | Nav, footer, thank-you page | ⬜ still on the live Netlify site; copy it in here, or the inline cow SVG keeps standing in |
+| `logo.png` (512×512, transparent) | Hero label, nav, footer, thank-you page, favicon | ✅ |
 | `products/made-1.jpg` (800×600) | How it's made, step 1: slicing the topside | ⬜ |
 | `products/made-2.jpg` (800×600) | How it's made, step 2: rubbing the seasoning in | ⬜ |
 | `products/made-3.jpg` (800×600) | How it's made, step 3: finished strips on the tray | ⬜ |

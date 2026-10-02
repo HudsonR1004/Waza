@@ -5,7 +5,7 @@ Static HTML, no build step. Five pages, one stylesheet, one script, one config f
 
 ```
 kramas-jerked-beef/
-├─ index.html          home: hero, flavours (tap for ingredients + NIP), bundles, monthly, how it's made, newsletter, contact
+├─ index.html          home: hero (label + slogan), flavours (tap for ingredients + NIP), bundles, monthly, how it's made, newsletter, contact
 ├─ thanks.html         Stripe redirects here after payment
 ├─ 404.html            custom not-found page (Netlify serves it automatically)
 ├─ privacy.html        privacy policy
@@ -27,8 +27,8 @@ kramas-jerked-beef/
    The site builds each FSANZ-style nutrition table from those numbers. Honey Sriracha is 2 × 25g
    serves per bag (from the company README); Magic Chilli is 1 × 50g serve (as printed on its sticker).
    If a sticker changes, change the numbers here so the site and the bag always agree.
-3. ✅ **Photos** — hero, both flavours, the three bundles and the social preview are in. Still to come:
-   `images/logo.png` (copy it from the live site) and three "how it's made" shots. See `images/README.md`.
+3. ✅ **Photos + logo** — both flavours, the three bundles, the social preview and the logo are in. Still to
+   come: three "how it's made" shots. See `images/README.md`.
 4. ⬜ **MailerLite** — paste the account ID and form ID into `MAILERLITE`. Sign-ups also land in
    Netlify Forms regardless, so nothing is lost while this is empty.
 5. ⬜ **Analytics (optional)** — set `ANALYTICS.domain` to turn on Plausible (cookie-free, so no banner

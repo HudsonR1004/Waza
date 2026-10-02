@@ -123,15 +123,20 @@
       </div>
     </div>
     <div class="hero__art reveal reveal--right">
-      <figure class="photo hero__photo">
-        <picture><source type="image/webp" srcset="images/products/hero.webp"><img src="images/products/hero.jpg" alt="Krama's Jerked Beef Honey Sriracha 50g kraft pouch on a timber bench with a honey dipper and fresh red chillies" width="800" height="1000" fetchpriority="high"></picture>
-        <figcaption class="photo__fallback">
-          <span class="cow-img"><img src="images/logo.png" alt=""><svg viewBox="0 0 200 210" aria-hidden="true"><use href="#cow"/></svg></span>
-          <span class="l-name">KRAMA'S</span>
-          <span class="l-sub">Long, slow, and done by hand.</span>
-        </figcaption>
-      </figure>
-      <div class="stamp stamp--right" aria-hidden="true">Small<br>batch<br>50g</div>
+      <div class="label" aria-label="Krama's Jerked Beef. Long, slow, and done by hand.">
+        <svg class="label__arc" viewBox="0 0 420 120" aria-hidden="true">
+          <path id="label-arc" d="M28,112 Q210,-10 392,112" fill="none"/>
+          <text><textPath href="#label-arc" startOffset="50%" text-anchor="middle">KRAMA'S</textPath></text>
+        </svg>
+        <div class="label__sub" aria-hidden="true">JERKED BEEF</div>
+        <span class="cow-img label__cow">
+          <img src="images/logo.png" alt="" width="160" height="160" fetchpriority="high">
+          <svg viewBox="0 0 200 210" aria-hidden="true"><use href="#cow"/></svg>
+        </span>
+        <hr class="dash-rule">
+        <p class="label__tag hand" aria-hidden="true">Long, slow, and done by hand.</p>
+        <hr class="dash-rule">
+      </div>
     </div>
   </div>
 </header>
